@@ -12,6 +12,8 @@
 		91C985ED28CB4EF800086475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C985EC28CB4EF800086475 /* Assets.xcassets */; };
 		91C985F028CB4EF800086475 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C985EF28CB4EF800086475 /* Preview Assets.xcassets */; };
 		91C985FA28CB4EF800086475 /* ReducerStateTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C985F928CB4EF800086475 /* ReducerStateTestTests.swift */; };
+		91C9861428CB706800086475 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 91C9861328CB706800086475 /* ComposableArchitecture */; };
+		91C9861628CB707B00086475 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C9861528CB707B00086475 /* AppFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 		91C985EF28CB4EF800086475 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91C985F528CB4EF800086475 /* ReducerStateTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReducerStateTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C985F928CB4EF800086475 /* ReducerStateTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerStateTestTests.swift; sourceTree = "<group>"; };
+		91C9861528CB707B00086475 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C9861428CB706800086475 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 			children = (
 				91C985E828CB4EF600086475 /* ReducerStateTestApp.swift */,
 				91C985EA28CB4EF600086475 /* ContentView.swift */,
+				91C9861528CB707B00086475 /* AppFeature.swift */,
 				91C985EC28CB4EF800086475 /* Assets.xcassets */,
 				91C985EE28CB4EF800086475 /* Preview Content */,
 			);
@@ -113,6 +118,9 @@
 			dependencies = (
 			);
 			name = ReducerStateTest;
+			packageProductDependencies = (
+				91C9861328CB706800086475 /* ComposableArchitecture */,
+			);
 			productName = ReducerStateTest;
 			productReference = 91C985E528CB4EF600086475 /* ReducerStateTest.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +171,9 @@
 				Base,
 			);
 			mainGroup = 91C985DC28CB4EF600086475;
+			packageReferences = (
+				91C9861228CB706800086475 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 91C985E628CB4EF600086475 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C9861628CB707B00086475 /* AppFeature.swift in Sources */,
 				91C985EB28CB4EF600086475 /* ContentView.swift in Sources */,
 				91C985E928CB4EF600086475 /* ReducerStateTestApp.swift in Sources */,
 			);
@@ -464,6 +476,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91C9861228CB706800086475 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.34.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91C9861328CB706800086475 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91C9861228CB706800086475 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91C985DD28CB4EF600086475 /* Project object */;
 }
