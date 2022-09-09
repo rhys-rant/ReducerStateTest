@@ -19,16 +19,26 @@ enum AppAction {
 }
 
 extension Reducer where State == AppState, Action == AppAction, Environment == Void {
-	static let app = Self { state, action, environment in
-		if action == .toggleLogin {
+	static let app = combine(
+		sharedReducer,
+
+		Self { state, action, environment in
+			if state.loggedIn {
+				return loggedIn(&state, action, environment)
+			} else {
+				return loggedOut(&state, action, environment)
+			}
+		}
+	)
+
+	static let sharedReducer = Self { state, action, _ in
+		switch action {
+		case .toggleLogin:
 			state.loggedIn.toggle()
 			return .none
-		}
 
-		if state.loggedIn {
-			return Reducer.loggedIn(&state, action, environment)
-		} else {
-			return Reducer.loggedOut(&state, action, environment)
+		default:
+			return .none
 		}
 	}
 
